@@ -31,6 +31,7 @@ let questions = [
         "answer-3": "Vanuatu",
         "answer-4": "Galapagos",
         "right-answer": 2
+
     },
     {
         "question": "Wie heisst die Hauptstadt der USA?",
@@ -51,11 +52,40 @@ function init() {
 }
 
 
-function showQuestion () {
+function showQuestion() {
     let question = questions[currentQuestion];
-    document.getElementById('question').innerHTML = question['question'];
+    document.getElementById('question-number').innerHTML = currentQuestion + 1;
+    document.getElementById('card-question').innerHTML = question['question'];
     document.getElementById('answer-1').innerHTML = question['answer-1'];
     document.getElementById('answer-2').innerHTML = question['answer-2'];
     document.getElementById('answer-3').innerHTML = question['answer-3'];
     document.getElementById('answer-4').innerHTML = question['answer-4'];
+}
+
+function answer(selection) {
+    let question = questions[currentQuestion];
+    let selectedQuestionNumber = selection.slice(-1);
+
+    let idOfRightAnswer = `answer-${question['right-answer']}`;
+
+    if (selectedQuestionNumber == question['right-answer']) {
+        document.getElementById(selection).parentNode.classList.add('bg-success');
+    } else {
+        document.getElementById(selection).parentNode.classList.add('bg-danger');
+        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+    }
+    document.getElementById('next-Button').disabled = false;
+}
+
+function nextQuestion() {
+    currentQuestion++;
+    document.getElementById('next-Button').disabled = true;
+    resetAnswerButtons();
+    showQuestion();
+}
+
+function resetAnswerButtons() {
+    for (let i = 1; i < 5; i++) {
+        document.getElementById(`answer-${i}`).parentNode.classList.remove('bg-danger', 'bg-success');
+    }
 }

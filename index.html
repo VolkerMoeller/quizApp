@@ -32,25 +32,25 @@
     <div class="card quiz-card">
       <img src="src/img/pencil.jpg" class="card-img-top">
       <div class="card-body">
-        <p class="card-text" id="question">Frage</p>
+        <p class="card-text" id="card-question">Frage</p>
 
-        <div class="card  mb-2">
+        <div class="card quiz-answer-card mb-2" onclick="answer('answer-1')">
           <div class="card-body" id="answer-1">
             Antwort
           </div>
         </div>
 
-        <div class="card  mb-2">
+        <div class="card quiz-answer-card mb-2" onclick="answer('answer-2')">
           <div class="card-body" id="answer-2">
             Antwort
           </div>
         </div>
-        <div class="card  mb-2">
+        <div class="card quiz-answer-card mb-2" onclick="answer('answer-3')">
           <div class="card-body" id="answer-3">
             Antwort
           </div>
         </div>
-        <div class="card  mb-2">
+        <div class="card quiz-answer-card mb-2" onclick="answer('answer-4')">
           <div class="card-body" id="answer-4">
             Antwort
           </div>
@@ -58,9 +58,9 @@
 
         <div class="question-footer">
           <span>
-            <b>1</b> von <b id="count-all">5</b> Fragen
+            <b id="question-number">1</b> von <b id="count-all">5</b> Fragen
           </span>
-          <button class="btn btn-primary">Nächste Frage</button>
+          <button class="btn btn-primary" id="next-Button" disabled onclick="nextQuestion()">Nächste Frage</button>
 
         </div>
 
