@@ -32,6 +32,30 @@ let questions = [
         "answer-4": "Galapagos",
         "right-answer": 2
     },
-
+    {
+        "question": "Wie heisst die Hauptstadt der USA?",
+        "answer-1": "Washington D.C.",
+        "answer-2": "New York",
+        "answer-3": "Los Angeles",
+        "answer-4": "Rocky Beach",
+        "right-answer": 1
+    },
 ];
 
+let currentQuestion = 0;
+
+
+function init() {
+    document.getElementById('count-all').innerHTML = questions.length;
+    showQuestion();
+}
+
+
+function showQuestion () {
+    let question = questions[currentQuestion];
+    document.getElementById('question').innerHTML = question['question'];
+    document.getElementById('answer-1').innerHTML = question['answer-1'];
+    document.getElementById('answer-2').innerHTML = question['answer-2'];
+    document.getElementById('answer-3').innerHTML = question['answer-3'];
+    document.getElementById('answer-4').innerHTML = question['answer-4'];
+}

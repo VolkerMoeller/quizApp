@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Quiz App</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
 
@@ -18,7 +18,7 @@
 
 </head>
 
-<body>
+<body onload="init()">
   <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
       <span class="navbar-text">
@@ -32,33 +32,33 @@
     <div class="card quiz-card">
       <img src="src/img/pencil.jpg" class="card-img-top">
       <div class="card-body">
-        <p class="card-text">Frage</p>
+        <p class="card-text" id="question">Frage</p>
 
         <div class="card  mb-2">
-          <div class="card-body">
+          <div class="card-body" id="answer-1">
             Antwort
           </div>
         </div>
 
         <div class="card  mb-2">
-          <div class="card-body">
+          <div class="card-body" id="answer-2">
             Antwort
           </div>
         </div>
         <div class="card  mb-2">
-          <div class="card-body">
+          <div class="card-body" id="answer-3">
             Antwort
           </div>
         </div>
         <div class="card  mb-2">
-          <div class="card-body">
+          <div class="card-body" id="answer-4">
             Antwort
           </div>
         </div>
 
         <div class="question-footer">
           <span>
-            <b>1</b> von <b>5</b> Fragen
+            <b>1</b> von <b id="count-all">5</b> Fragen
           </span>
           <button class="btn btn-primary">Nächste Frage</button>
 
