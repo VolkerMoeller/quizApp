@@ -1,17 +1,10 @@
 body {
-    background-color: rgba(244, 237, 255, 1.0) !important;
+    min-height: 100vh;
+    display: flex;
 }
 
 .quiz-card {
     width: 25rem;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: rgba(244, 237, 255, 1.0) !important;
 }
 
 
@@ -36,4 +29,52 @@ body {
 
 .wrong-answer {
     color: white;
+}
+
+.paddingTpBtm-45 {
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+.widthUnset {
+    width: unset;
+}
+
+
+
+.displayFlex-content {
+    display: flex;
+    justify-content: center;
+}
+
+
+.displayFlex-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.displayFlex-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.flex-direction-unset {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.styleContentWidth {
+    max-width: 40rem !important;
 }

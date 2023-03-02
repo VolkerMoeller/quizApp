@@ -53,14 +53,21 @@ function init() {
 
 
 function showQuestion() {
-    let question = questions[currentQuestion];
-    document.getElementById('question-number').innerHTML = currentQuestion + 1;
-    document.getElementById('card-question').innerHTML = question['question'];
-    document.getElementById('answer-1').innerHTML = question['answer-1'];
-    document.getElementById('answer-2').innerHTML = question['answer-2'];
-    document.getElementById('answer-3').innerHTML = question['answer-3'];
-    document.getElementById('answer-4').innerHTML = question['answer-4'];
+    if (currentQuestion >= questions.length) {
+        // showEndScreen
+    } else {
+
+        let question = questions[currentQuestion];
+
+        document.getElementById('question-number').innerHTML = currentQuestion + 1;
+        document.getElementById('card-question').innerHTML = question['question'];
+        document.getElementById('answer-1').innerHTML = question['answer-1'];
+        document.getElementById('answer-2').innerHTML = question['answer-2'];
+        document.getElementById('answer-3').innerHTML = question['answer-3'];
+        document.getElementById('answer-4').innerHTML = question['answer-4'];
+    }
 }
+
 
 function answer(selection) {
     let question = questions[currentQuestion];

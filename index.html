@@ -18,60 +18,70 @@
 
 </head>
 
-<body onload="init()">
-  <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-      <span class="navbar-text">
-        Quiz App
-      </span>
-    </div>
-  </nav>
+<body class="bg-body-secondary bg-opacity-75" onload="init()">
+
+  <div class="progress bg-secondary bg-opacity-75 position-absolute start-0 end-0" role="progressbar"
+    aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar" style="width: 5%"></div>
+  </div>
 
 
-  <div class="container">
-    <div class="card quiz-card">
-      <img src="src/img/pencil.jpg" class="card-img-top">
-      <div class="card-body">
-        <p class="card-text" id="card-question">Frage</p>
+<div class="container m-auto">
 
-        <div class="card quiz-answer-card mb-2" onclick="answer('answer-1')">
-          <div class="card-body" id="answer-1">
-            Antwort
-          </div>
+  <div class="container d-flex m-auto styleContentWidth">
+    <ul class="nav flex-column bg-primary">
+      <li class="nav-item">
+        <a class="nav-link active text-light" aria-current="page" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  text-white" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  text-white" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled text-secondary">Disabled</a>
+      </li>
+    </ul>
+
+
+    <div class="container bg-body-tertiary pt-3 pt-3 ">
+      <p class="card-text" id="card-question">Frage</p>
+      <div class="card quiz-answer-card mb-2" onclick="answer('answer-1')">
+        <div class="card-body" id="answer-1">
+          Antwort
         </div>
-
-        <div class="card quiz-answer-card mb-2" onclick="answer('answer-2')">
-          <div class="card-body" id="answer-2">
-            Antwort
-          </div>
+      </div>
+      <div class="card quiz-answer-card mb-2" onclick="answer('answer-2')">
+        <div class="card-body" id="answer-2">
+          Antwort
         </div>
-        <div class="card quiz-answer-card mb-2" onclick="answer('answer-3')">
-          <div class="card-body" id="answer-3">
-            Antwort
-          </div>
+      </div>
+      <div class="card quiz-answer-card mb-2" onclick="answer('answer-3')">
+        <div class="card-body" id="answer-3">
+          Antwort
         </div>
-        <div class="card quiz-answer-card mb-2" onclick="answer('answer-4')">
-          <div class="card-body" id="answer-4">
-            Antwort
-          </div>
+      </div>
+      <div class="card quiz-answer-card mb-2" onclick="answer('answer-4')">
+        <div class="card-body" id="answer-4">
+          Antwort
         </div>
-
-        <div class="question-footer">
-          <span>
-            <b id="question-number">1</b> von <b id="count-all">5</b> Fragen
-          </span>
-          <button class="btn btn-primary" id="next-Button" disabled onclick="nextQuestion()">Nächste Frage</button>
-
-        </div>
-
-
-
+      </div>
+      <div class="question-footer">
+        <span>
+          <b id="question-number">1</b> von <b id="count-all">5</b> Fragen
+        </span>
+        <button class="btn btn-primary" id="next-Button" disabled onclick="nextQuestion()">Nächste Frage</button>
+      </div>
+      <div class="container">
+        <span>links</span>
+        <span>rechst</span>
       </div>
     </div>
   </div>
 
 
-
+</div>
 </body>
 
 </html>
