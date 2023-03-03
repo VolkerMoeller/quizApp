@@ -11,3 +11,10 @@
     font-style: normal;
     font-weight: normal;
 }
+
+@font-face {
+    font-family: 'Rubik-Bold';
+    src: url(src/font/Rubik-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}

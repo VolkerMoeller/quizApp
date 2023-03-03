@@ -41,6 +41,22 @@ let questions = [
         "answer-4": "Rocky Beach",
         "right-answer": 1
     },
+    {
+        "question": "Wie heisst ein Inselstaat im Pazifischen Ozean?",
+        "answer-1": "Marshallinseln",
+        "answer-2": "Sheriffinseln",
+        "answer-3": "Rangerinseln",
+        "answer-4": "Lieutenantinseln",
+        "right-answer": 1
+    },
+    {
+        "question": "Wie heisst Indiens wichtigster und längster Fluss??",
+        "answer-1": "Seine",
+        "answer-2": "Spree",
+        "answer-3": "Ganges",
+        "answer-4": "Amazonas",
+        "right-answer": 3
+    }
 ];
 
 let currentQuestion = 0;

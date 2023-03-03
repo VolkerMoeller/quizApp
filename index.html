@@ -26,10 +26,9 @@
     <div class="progress-bar" id="progress" style="width: 5%"></div>
   </div>
 
-
   <div class="container m-auto">
 
-    <div class="container d-flex m-auto  styleContentWidthImp">
+    <div class="container d-flex m-auto styleContentWidthImp">
       <ul class="nav flex-column bg-primary py-4">
         <div class="text-center mt-0 mb-5 ">
           <img src="src/img/quizBlue/logo 2.png" class="rounded">
@@ -46,36 +45,47 @@
         </li>
       </ul>
 
+      <div class="container bg-body-tertiary border pt-3 pb-3">
+        <div class="container d-flex flex-column justify-content-around align-items-center bg-danger bg-opacity-25 rounded-circle styleImageEndContainer ">
+          <div class="styleImgDiv">
+            <img src="src/img/quizBlue/Group 5.png">
+          </div>
+          <span class="styleFontRB fs-5">COMPLETE<br>HTML QUIZ</span>
+          <span class="styleFontRB text-primary fs-5">YOUR SCORE <span class="text-black">10/10</span></span>
+          <div type="button" class="btn btn-danger" >SHARE</div>
+          <div type="button" class="btn btn-danger">REPLAY</div>
+        </div>
+      </div>
 
-      <div class="container bg-body-tertiary pt-3 pt-3">
+      <div class="container bg-body-tertiary pt-3 pb-3 d-none">
         <p class="card-text text-center styleFontRM fs-5" id="card-question">Frage</p>
 
-        <div type="button" class="card btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50" id="answerb-1"
-          onclick="answer('answer-1')">
+        <div type="button" class="card btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50"
+          id="answerb-1" onclick="answer('answer-1')">
           <span class="styleFontRM m-2 p-2 bg-secondary bg-opacity-25 styleSizeIcon text-center"
             id="listItem-1">A</span>
           <div class="card-body" id="answer-1">
             Antwort
           </div>
         </div>
-        <div type="button" class="card btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50" id="answerb-2"
-          onclick="answer('answer-2')">
+        <div type="button" class="card btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50"
+          id="answerb-2" onclick="answer('answer-2')">
           <span class="styleFontRM m-2 p-2 bg-secondary bg-opacity-25 styleSizeIcon text-center"
             id="listItem-2">B</span>
           <div class="card-body" id="answer-2">
             Antwort
           </div>
         </div>
-        <div type="button" class="card btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50" id="answerb-3"
-          onclick="answer('answer-3')">
+        <div type="button" class="card btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50"
+          id="answerb-3" onclick="answer('answer-3')">
           <span class="styleFontRM m-2 p-2 bg-secondary bg-opacity-25 styleSizeIcon text-center"
             id="listItem-3">C</span>
           <div class="card-body" id="answer-3">
             Antwort
           </div>
         </div>
-        <div type="button" class="card btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50" id="answerb-4"
-          onclick="answer('answer-4')">
+        <div type="button" class="card btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50"
+          id="answerb-4" onclick="answer('answer-4')">
           <span class="styleFontRM m-2 p-2 bg-secondary bg-opacity-25 styleSizeIcon text-center"
             id="listItem-4">D</span>
           <div class="card-body" id="answer-4">
