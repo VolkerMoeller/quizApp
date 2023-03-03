@@ -45,19 +45,20 @@
         </li>
       </ul>
 
-      <div class="container bg-body-tertiary border pt-3 pb-3">
-        <div class="container d-flex flex-column justify-content-around align-items-center bg-danger bg-opacity-25 rounded-circle styleImageEndContainer ">
+      <div class="container bg-body-tertiary border pt-5 pb-5 d-none" id="containerQuizEnd">
+        <div
+          class="container d-flex flex-column justify-content-around align-items-center bg-danger bg-opacity-25 rounded-circle styleImageEndContainer ">
           <div class="styleImgDiv">
             <img src="src/img/quizBlue/Group 5.png">
           </div>
           <span class="styleFontRB fs-5">COMPLETE<br>HTML QUIZ</span>
-          <span class="styleFontRB text-primary fs-5">YOUR SCORE <span class="text-black">10/10</span></span>
-          <div type="button" class="btn btn-danger" >SHARE</div>
+          <span class="styleFontRB text-primary fs-5">YOUR SCORE <span class="text-black" id="countRightAnswers">10</span><span class="text-black"> / </span><span class="text-black" id="countTotalAnswers">10</span></span>
+          <div type="button" class="btn btn-danger">SHARE</div>
           <div type="button" class="btn btn-danger">REPLAY</div>
         </div>
       </div>
 
-      <div class="container bg-body-tertiary pt-3 pb-3 d-none">
+      <div class="container bg-body-tertiary pt-3 pb-3" id="containerQuiz">
         <p class="card-text text-center styleFontRM fs-5" id="card-question">Frage</p>
 
         <div type="button" class="card btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50"
