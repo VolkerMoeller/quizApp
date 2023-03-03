@@ -44,6 +44,7 @@ let questions = [
 ];
 
 let currentQuestion = 0;
+let counter = -1;
 
 
 function init() {
@@ -53,12 +54,12 @@ function init() {
 
 
 function showQuestion() {
+    counter++;
+    updateProgress(counter);
     if (currentQuestion >= questions.length) {
         // showEndScreen
     } else {
-
         let question = questions[currentQuestion];
-
         document.getElementById('question-number').innerHTML = currentQuestion + 1;
         document.getElementById('card-question').innerHTML = question['question'];
         document.getElementById('answer-1').innerHTML = question['answer-1'];
@@ -78,22 +79,30 @@ function answer(selection) {
     let idOfListItemRightAnswer = `listItem-${question['right-answer']}`
 
     if (selectedQuestionNumber == question['right-answer']) {
-        document.getElementById(selection).parentNode.classList.add('bg-success');
-        document.getElementById(idOfListItemRightAnswer).classList.remove('bg-opacity-25');
-        document.getElementById(idOfListItemRightAnswer).classList.add('bg-success');
-        document.getElementById(idOfListItemRightAnswer).classList.add('text-white');
+        styleRightAnswer(selection, idOfListItemRightAnswer);
     } else {
-        document.getElementById(idOfCurrentListItem).classList.add('text-white');
-        document.getElementById(selection).parentNode.classList.add('bg-danger');
-        document.getElementById(idOfCurrentListItem).classList.remove('bg-opacity-25');
-        document.getElementById(idOfCurrentListItem).classList.add('bg-danger');
-        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
-        document.getElementById(idOfListItemRightAnswer).classList.remove('bg-opacity-25');
-        document.getElementById(idOfListItemRightAnswer).classList.add('bg-success');
-        document.getElementById(idOfListItemRightAnswer).classList.add('text-white');
-
+        styleWrongAnswer(selection, idOfCurrentListItem, idOfRightAnswer, idOfListItemRightAnswer);
     }
     document.getElementById('next-Button').disabled = false;
+}
+
+
+function styleRightAnswer(selection, idOfListItemRightAnswer) {
+    document.getElementById(selection).parentNode.classList.add('bg-success');
+    document.getElementById(idOfListItemRightAnswer).classList.remove('bg-opacity-25');
+    document.getElementById(idOfListItemRightAnswer).classList.add('bg-success');
+    document.getElementById(idOfListItemRightAnswer).classList.add('text-white');
+}
+
+function styleWrongAnswer(selection, idOfCurrentListItem, idOfRightAnswer, idOfListItemRightAnswer) {
+    document.getElementById(selection).parentNode.classList.add('bg-danger');
+    document.getElementById(idOfCurrentListItem).classList.add('text-white');
+    document.getElementById(idOfCurrentListItem).classList.remove('bg-opacity-25');
+    document.getElementById(idOfCurrentListItem).classList.add('bg-danger');
+    document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+    document.getElementById(idOfListItemRightAnswer).classList.remove('bg-opacity-25');
+    document.getElementById(idOfListItemRightAnswer).classList.add('bg-success');
+    document.getElementById(idOfListItemRightAnswer).classList.add('text-white');
 }
 
 function nextQuestion() {
@@ -112,4 +121,10 @@ function resetAnswerButtons() {
         document.getElementById(`listItem-${i}`).classList.remove('bg-danger');
         document.getElementById(`listItem-${i}`).classList.remove('text-white');
     }
+}
+
+function updateProgress(counter) {
+    let valueProgress = 100 / questions.length * counter;
+    let newProgress = `width: ${valueProgress}%`;
+    document.getElementById('progress').style = newProgress;
 }
