@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz App</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleFonts.css">
   <script src="script.js"></script>
 
   <!-- bootstrap files -->
@@ -18,7 +19,7 @@
 
 </head>
 
-<body class="bg-body-secondary bg-opacity-75" onload="init()">
+<body class="bg-body-secondary bg-opacity-75 styleFontRR" onload="init()">
 
   <div class="progress bg-secondary bg-opacity-75 position-absolute start-0 end-0" role="progressbar"
     aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
@@ -26,62 +27,64 @@
   </div>
 
 
-<div class="container m-auto">
+  <div class="container m-auto">
 
-  <div class="container d-flex m-auto styleContentWidth">
-    <ul class="nav flex-column bg-primary">
-      <li class="nav-item">
-        <a class="nav-link active text-light" aria-current="page" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link  text-white" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link  text-white" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled text-secondary">Disabled</a>
-      </li>
-    </ul>
+    <div class="container d-flex m-auto  styleContentWidth">
+      <ul class="nav flex-column bg-primary py-4">
+        <div class="text-center mt-0 mb-5 ">
+          <img src="src/img/quizBlue/logo 2.png" class="rounded">
+        </div>
+        <li class="nav-item">
+          <a class="nav-link active border-start border-5 border-white text-light fs-5" aria-current="page"
+            href="index.html">Geographie</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled text-secondary fs-5" href="#">Tiere</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  disabled text-secondary fs-5" href="#">Personen</a>
+        </li>
+      </ul>
 
 
-    <div class="container bg-body-tertiary pt-3 pt-3 ">
-      <p class="card-text" id="card-question">Frage</p>
-      <div class="card quiz-answer-card mb-2" onclick="answer('answer-1')">
-        <div class="card-body" id="answer-1">
-          Antwort
+      <div class="container bg-body-tertiary pt-3 pt-3 ">
+        <p class="card-text text-center styleFontRM fs-5" id="card-question">Frage</p>
+
+        <div class="card flex-row quiz-answer-card rounded-0 mb-2 fs-5 bg-opacity-50" onclick="answer('answer-1')">
+          <span class="styleFontRM m-2 p-2 bg-secondary bg-opacity-25 styleSizeIcon text-center" id="listItem-1">A</span>
+          <div class="card-body" id="answer-1">
+            Antwort
+          </div>
         </div>
-      </div>
-      <div class="card quiz-answer-card mb-2" onclick="answer('answer-2')">
-        <div class="card-body" id="answer-2">
-          Antwort
+        <div class="card flex-row quiz-answer-card rounded-0 mb-2 fs-5 bg-opacity-50" onclick="answer('answer-2')">
+          <span class="styleFontRM m-2 p-2 bg-secondary bg-opacity-25 styleSizeIcon text-center" id="listItem-2">B</span>
+          <div class="card-body" id="answer-2">
+            Antwort
+          </div>
         </div>
-      </div>
-      <div class="card quiz-answer-card mb-2" onclick="answer('answer-3')">
-        <div class="card-body" id="answer-3">
-          Antwort
+        <div class="card flex-row quiz-answer-card rounded-0 mb-2 fs-5 bg-opacity-50" onclick="answer('answer-3')">
+          <span class="styleFontRM m-2 p-2 bg-secondary bg-opacity-25 styleSizeIcon text-center"  id="listItem-3">C</span>
+          <div class="card-body" id="answer-3">
+            Antwort
+          </div>
         </div>
-      </div>
-      <div class="card quiz-answer-card mb-2" onclick="answer('answer-4')">
-        <div class="card-body" id="answer-4">
-          Antwort
+        <div class="card flex-row quiz-answer-card rounded-0 mb-2 fs-5 bg-opacity-50" onclick="answer('answer-4')">
+          <span class="styleFontRM m-2 p-2 bg-secondary bg-opacity-25 styleSizeIcon text-center"  id="listItem-4">D</span>
+          <div class="card-body" id="answer-4">
+            Antwort
+          </div>
         </div>
-      </div>
-      <div class="question-footer">
-        <span>
-          <b id="question-number">1</b> von <b id="count-all">5</b> Fragen
-        </span>
-        <button class="btn btn-primary" id="next-Button" disabled onclick="nextQuestion()">Nächste Frage</button>
-      </div>
-      <div class="container">
-        <span>links</span>
-        <span>rechst</span>
+        <div class="question-footer py-3">
+          <span>
+            <b id="question-number">1</b> von <b id="count-all">5</b> Fragen
+          </span>
+          <button class="btn btn-primary" id="next-Button" disabled onclick="nextQuestion()">Nächste Frage</button>
+        </div>
       </div>
     </div>
+
+
   </div>
-
-
-</div>
 </body>
 
 </html>

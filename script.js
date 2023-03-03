@@ -72,14 +72,26 @@ function showQuestion() {
 function answer(selection) {
     let question = questions[currentQuestion];
     let selectedQuestionNumber = selection.slice(-1);
+    let idOfCurrentListItem = `listItem-${selectedQuestionNumber}`;
 
     let idOfRightAnswer = `answer-${question['right-answer']}`;
+    let idOfListItemRightAnswer = `listItem-${question['right-answer']}`
 
     if (selectedQuestionNumber == question['right-answer']) {
         document.getElementById(selection).parentNode.classList.add('bg-success');
+        document.getElementById(idOfListItemRightAnswer).classList.remove('bg-opacity-25');
+        document.getElementById(idOfListItemRightAnswer).classList.add('bg-success');
+        document.getElementById(idOfListItemRightAnswer).classList.add('text-white');
     } else {
+        document.getElementById(idOfCurrentListItem).classList.add('text-white');
         document.getElementById(selection).parentNode.classList.add('bg-danger');
+        document.getElementById(idOfCurrentListItem).classList.remove('bg-opacity-25');
+        document.getElementById(idOfCurrentListItem).classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+        document.getElementById(idOfListItemRightAnswer).classList.remove('bg-opacity-25');
+        document.getElementById(idOfListItemRightAnswer).classList.add('bg-success');
+        document.getElementById(idOfListItemRightAnswer).classList.add('text-white');
+
     }
     document.getElementById('next-Button').disabled = false;
 }
@@ -93,6 +105,11 @@ function nextQuestion() {
 
 function resetAnswerButtons() {
     for (let i = 1; i < 5; i++) {
-        document.getElementById(`answer-${i}`).parentNode.classList.remove('bg-danger', 'bg-success');
+        document.getElementById(`answer-${i}`).parentNode.classList.remove('bg-danger');
+        document.getElementById(`answer-${i}`).parentNode.classList.remove('bg-success');
+        document.getElementById(`listItem-${i}`).classList.add('bg-opacity-25');
+        document.getElementById(`listItem-${i}`).classList.remove('bg-success');
+        document.getElementById(`listItem-${i}`).classList.remove('bg-danger');
+        document.getElementById(`listItem-${i}`).classList.remove('text-white');
     }
 }

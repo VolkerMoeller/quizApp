@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Rubik-Regular';
+    src: url(src/font/Rubik-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Rubik-Medium';
+    src: url(src/font/Rubik-Medium.ttf) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
