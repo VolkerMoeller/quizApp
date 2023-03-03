@@ -19,7 +19,7 @@
 
 </head>
 
-<body class="bg-body-secondary bg-opacity-75 styleFontRR" onload="init()">
+<body class="d-flex min-vh-100 bg-body-secondary bg-opacity-75 styleFontRR" onload="init()">
 
   <div class="progress bg-secondary bg-opacity-75 position-absolute start-0 end-0" role="progressbar"
     aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
@@ -29,7 +29,7 @@
 
   <div class="container m-auto">
 
-    <div class="container d-flex m-auto  styleContentWidth">
+    <div class="container d-flex m-auto  styleContentWidthImp">
       <ul class="nav flex-column bg-primary py-4">
         <div class="text-center mt-0 mb-5 ">
           <img src="src/img/quizBlue/logo 2.png" class="rounded">
@@ -50,7 +50,7 @@
       <div class="container bg-body-tertiary pt-3 pt-3">
         <p class="card-text text-center styleFontRM fs-5" id="card-question">Frage</p>
 
-        <div class="card flex-row quiz-answer-card rounded-0 mb-2 fs-5 bg-opacity-50" id="answerb-1"
+        <div type="button" class="card btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50" id="answerb-1"
           onclick="answer('answer-1')">
           <span class="styleFontRM m-2 p-2 bg-secondary bg-opacity-25 styleSizeIcon text-center"
             id="listItem-1">A</span>
@@ -58,7 +58,7 @@
             Antwort
           </div>
         </div>
-        <div class="card flex-row quiz-answer-card rounded-0 mb-2 fs-5 bg-opacity-50" id="answerb-2"
+        <div type="button" class="card btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50" id="answerb-2"
           onclick="answer('answer-2')">
           <span class="styleFontRM m-2 p-2 bg-secondary bg-opacity-25 styleSizeIcon text-center"
             id="listItem-2">B</span>
@@ -66,7 +66,7 @@
             Antwort
           </div>
         </div>
-        <div class="card flex-row quiz-answer-card rounded-0 mb-2 fs-5 bg-opacity-50" id="answerb-3"
+        <div type="button" class="card btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50" id="answerb-3"
           onclick="answer('answer-3')">
           <span class="styleFontRM m-2 p-2 bg-secondary bg-opacity-25 styleSizeIcon text-center"
             id="listItem-3">C</span>
@@ -74,7 +74,7 @@
             Antwort
           </div>
         </div>
-        <div class="card flex-row quiz-answer-card rounded-0 mb-2 fs-5 bg-opacity-50" id="answerb-4"
+        <div type="button" class="card btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50" id="answerb-4"
           onclick="answer('answer-4')">
           <span class="styleFontRM m-2 p-2 bg-secondary bg-opacity-25 styleSizeIcon text-center"
             id="listItem-4">D</span>
@@ -82,7 +82,7 @@
             Antwort
           </div>
         </div>
-        <div class="question-footer py-3">
+        <div class="d-flex justify-content-between align-items-center border-top border-dark-subtle py-3">
           <span>
             <b id="question-number">1</b> von <b id="count-all">5</b> Fragen
           </span>
