@@ -117,6 +117,7 @@ function answer(selection) {
 
     if (selectedQuestionNumber == question['right-answer']) {
         AUDIO_success.play();
+        console.log('hallo');
         styleRightAnswer(selection, idOfListItemRightAnswer);
         disableButtons();
         counterRight++;
@@ -153,6 +154,10 @@ function nextQuestion() {
     resetAnswerButtons();
     showQuestion();
     enableButtons();
+    AUDIO_success.pause();
+    AUDIO_success.currentTime = 0;
+    AUDIO_wrong.pause();
+    AUDIO_wrong.currentTime = 0;
 }
 
 function resetAnswerButtons() {

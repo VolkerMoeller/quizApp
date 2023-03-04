@@ -1,3 +1,7 @@
+button:disabled {
+    opacity: 1 !important;
+}
+
 .styleFontRR {
     font-family: 'Rubik-Regular' !important;
 }
@@ -9,7 +13,6 @@
 .styleFontRB {
     font-family: 'Rubik-Bold' !important;
 }
-
 
 .styleSizeIcon {
     width: 48px;
@@ -24,17 +27,23 @@
     max-width: 40rem !important;
 }
 
-.styleTextBlackImp{
+.styleTextBlackImp {
     color: black !important;
 }
 
 .styleImageEndContainer {
-    width: 400px !important;
-    height: 400px !important;
+    width: 418px !important;
+    height: 418px !important;
 }
 
 .styleImgDiv img {
     width: 200px;
     height: 120px;
     object-fit: contain;
+}
+
+.style-Card-Question {
+    line-height: 2.5ex;
+    height: 5.0ex; /* 2.5ex for each visible line */
+    overflow: hidden;
 }
