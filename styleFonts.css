@@ -18,3 +18,10 @@
     font-style: normal;
     font-weight: bold;
 }
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url(src/font/PTSans-Bold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}
