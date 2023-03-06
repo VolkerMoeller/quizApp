@@ -103,6 +103,7 @@ function gameOver() {
     return currentQuestion >= questions.length;
 }
 
+
 function updateToNextQuestion() {
     let question = questions[currentQuestion];
     document.getElementById('question-number').innerHTML = currentQuestion + 1;
@@ -113,6 +114,7 @@ function updateToNextQuestion() {
     document.getElementById('answer-4').innerHTML = question['answer-4'];
 }
 
+
 function showEndScreen() {
     AUDIO_fanfare.play();
     document.getElementById('containerQuiz').classList.add('d-none');
@@ -120,6 +122,7 @@ function showEndScreen() {
     document.getElementById('countRightAnswers').innerHTML = `&ensp;` + counterRight;
     document.getElementById('countTotalAnswers').innerHTML = questions.length;
 }
+
 
 function answer(selection) {
     let question = questions[currentQuestion];
@@ -148,11 +151,13 @@ function animateButtonAndUpdateCounter(selection, idOfListItemRightAnswer) {
     counterRight++;
 }
 
+
 function animateRightAndWrongButton(selection, idOfCurrentListItem, idOfRightAnswer, idOfListItemRightAnswer) {
     AUDIO_wrong.play();
     styleWrongAnswer(selection, idOfCurrentListItem, idOfRightAnswer, idOfListItemRightAnswer);
     disableButtons();
 }
+
 
 function answerWasCorrect(selectedQuestionNumber, question) {
     return selectedQuestionNumber == question['right-answer'];
