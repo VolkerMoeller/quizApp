@@ -36,6 +36,7 @@ button:disabled {
 }
 
 .styleImageEndContainer {
+    border-radius: 100% !important;
     width: 418px !important;
     height: 418px !important;
 }
@@ -76,5 +77,16 @@ button:disabled {
     .style-Conainer-Quiz {
         padding: 0px !important;
     }
+
+    .styleContentWidthImp {
+        height: 100vh;
+    }
+
+    .styleImageEndContainer {
+        border-radius: 0% !important;
+        width: 209px !important;
+        height: 100% !important;
+    }
+
 
 }

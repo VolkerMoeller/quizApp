@@ -8,55 +8,55 @@ let questions = [
         "answer-4": "Thailand",
         "right-answer": 1
     },
-    {
-        "question": "Nach wem wird eine Frisur benannt?",
-        "answer-1": "Zöpfern",
-        "answer-2": "Piss-Pottern",
-        "answer-3": "Wikingern",
-        "answer-4": "Irokesen",
-        "right-answer": 4
-    },
-    {
-        "question": "Was passt zusammen?",
-        "answer-1": "Fidel Castro und Jamaika",
-        "answer-2": "Fidel Castro und Kuba",
-        "answer-3": "Fidel Castro und Bolivien",
-        "answer-4": "Fidel Castro und Hawaii",
-        "right-answer": 2
-    },
-    {
-        "question": "Welche Insel besitzt die berühmten Steinskulpturen, die Moais genannt werden?",
-        "answer-1": "Fidschi",
-        "answer-2": "Osterinseln",
-        "answer-3": "Vanuatu",
-        "answer-4": "Galapagos",
-        "right-answer": 2
+    // {
+    //     "question": "Nach wem wird eine Frisur benannt?",
+    //     "answer-1": "Zöpfern",
+    //     "answer-2": "Piss-Pottern",
+    //     "answer-3": "Wikingern",
+    //     "answer-4": "Irokesen",
+    //     "right-answer": 4
+    // },
+    // {
+    //     "question": "Was passt zusammen?",
+    //     "answer-1": "Fidel Castro und Jamaika",
+    //     "answer-2": "Fidel Castro und Kuba",
+    //     "answer-3": "Fidel Castro und Bolivien",
+    //     "answer-4": "Fidel Castro und Hawaii",
+    //     "right-answer": 2
+    // },
+    // {
+    //     "question": "Welche Insel besitzt die berühmten Steinskulpturen, die Moais genannt werden?",
+    //     "answer-1": "Fidschi",
+    //     "answer-2": "Osterinseln",
+    //     "answer-3": "Vanuatu",
+    //     "answer-4": "Galapagos",
+    //     "right-answer": 2
 
-    },
-    {
-        "question": "Wie heisst die Hauptstadt der USA?",
-        "answer-1": "Washington D.C.",
-        "answer-2": "New York",
-        "answer-3": "Los Angeles",
-        "answer-4": "Rocky Beach",
-        "right-answer": 1
-    },
-    {
-        "question": "Wie heisst ein Inselstaat im Pazifischen Ozean?",
-        "answer-1": "Marshallinseln",
-        "answer-2": "Sheriffinseln",
-        "answer-3": "Rangerinseln",
-        "answer-4": "Lieutenantinseln",
-        "right-answer": 1
-    },
-    {
-        "question": "Wie heisst Indiens wichtigster und längster Fluss??",
-        "answer-1": "Seine",
-        "answer-2": "Spree",
-        "answer-3": "Ganges",
-        "answer-4": "Amazonas",
-        "right-answer": 3
-    }
+    // },
+    // {
+    //     "question": "Wie heisst die Hauptstadt der USA?",
+    //     "answer-1": "Washington D.C.",
+    //     "answer-2": "New York",
+    //     "answer-3": "Los Angeles",
+    //     "answer-4": "Rocky Beach",
+    //     "right-answer": 1
+    // },
+    // {
+    //     "question": "Wie heisst ein Inselstaat im Pazifischen Ozean?",
+    //     "answer-1": "Marshallinseln",
+    //     "answer-2": "Sheriffinseln",
+    //     "answer-3": "Rangerinseln",
+    //     "answer-4": "Lieutenantinseln",
+    //     "right-answer": 1
+    // },
+    // {
+    //     "question": "Wie heisst Indiens wichtigster und längster Fluss??",
+    //     "answer-1": "Seine",
+    //     "answer-2": "Spree",
+    //     "answer-3": "Ganges",
+    //     "answer-4": "Amazonas",
+    //     "right-answer": 3
+    // }
 ];
 
 let currentQuestion = 0;
@@ -117,7 +117,6 @@ function answer(selection) {
 
     if (selectedQuestionNumber == question['right-answer']) {
         AUDIO_success.play();
-        console.log('hallo');
         styleRightAnswer(selection, idOfListItemRightAnswer);
         disableButtons();
         counterRight++;
