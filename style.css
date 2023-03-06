@@ -39,6 +39,7 @@ button:disabled {
     border-radius: 100% !important;
     width: 418px !important;
     height: 418px !important;
+
 }
 
 .styleImgEndDiv img {
@@ -53,27 +54,37 @@ button:disabled {
 
 .style-Card-Question {
     line-height: 2.5ex;
-    height: 5.0ex; /* 2.5ex for each visible line */
+    height: 5.0ex;
+    /* 2.5ex for each visible line */
     overflow: hidden;
 }
 
 .styleBtnWelcome {
-    background-color: rgba(247,247,247,1.0);
+    background-color: rgba(247, 247, 247, 1.0);
+}
+
+.style-Container-Quiz-End {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
 }
 
 @media (max-width: 780px) {
     .style-Card-Question {
         line-height: 2.5ex;
-        height: 12.5ex; /* 2.5ex for each visible line */
+        height: 12.5ex;
+        /* 2.5ex for each visible line */
         overflow: hidden;
     }
-    .style-Container-Left{
+
+    .style-Container-Left {
         padding: 0px !important;
     }
+
     .styleContentWidthImp {
         max-width: 40rem !important;
         padding: 0px !important;
     }
+
     .style-Conainer-Quiz {
         padding: 0px !important;
     }
@@ -85,7 +96,17 @@ button:disabled {
     .styleImageEndContainer {
         border-radius: 0% !important;
         width: 209px !important;
-        height: 100% !important;
+        height: 100vh !important;
+        padding: 0px !important;
+    }
+
+    .style-Container-Quiz-End {
+        padding: 0px !important;
+        margin: 0px !important;
+    }
+
+    .styleBtnWelcomeText {
+        width: min-content;
     }
 
 

@@ -23,7 +23,7 @@
 
   <div id="progressContainer" class="progress bg-secondary bg-opacity-75 position-absolute start-0 end-0" role="progressbar"
     aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-    <div class="progress-bar" id="progress" style="width: 0%"></div>
+    <div class="progress-bar bg-danger" id="progress" style="width: 0%"></div>
   </div>
 
   <div id="quiz-Card-Base" class="container style-Container-Left m-auto">
@@ -62,7 +62,7 @@
       <div id="containerQuiz" class="container bg-body-tertiary pt-3 pb-3 style-Conainer-Quiz">
         <p class="card-text text-center styleFontRM fs-5 style-Card-Question" id="card-question">Frage</p>
         <button type="button" disabled
-          class="card w-100 btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50" id="answerb-1"
+          class="card w-100 btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50 p-0" id="answerb-1"
           onclick="answer('answer-1')">
           <span class="styleFontRM m-2 p-2 bg-secondary bg-opacity-25 styleSizeIcon text-center"
             id="listItem-1">A</span>
@@ -71,7 +71,7 @@
           </div>
         </button>
         <button type="button" disabled
-          class="card w-100 btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50" id="answerb-2"
+          class="card w-100 btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50 p-0" id="answerb-2"
           onclick="answer('answer-2')">
           <span class="styleFontRM m-2 p-2 bg-secondary bg-opacity-25 styleSizeIcon text-center"
             id="listItem-2">B</span>
@@ -80,7 +80,7 @@
           </div>
         </button>
         <button type="button" disabled
-          class="card w-100 btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50" id="answerb-3"
+          class="card w-100 btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50 p-0" id="answerb-3"
           onclick="answer('answer-3')">
           <span class="styleFontRM m-2 p-2 bg-secondary bg-opacity-25 styleSizeIcon text-center"
             id="listItem-3">C</span>
@@ -89,7 +89,7 @@
           </div>
         </button>
         <button type="button" disabled
-          class="card w-100 btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50" id="answerb-4"
+          class="card w-100 btn btn-light text-start flex-row rounded-0 mb-2 fs-5 bg-opacity-50 p-0" id="answerb-4"
           onclick="answer('answer-4')">
           <span class="styleFontRM m-2 p-2 bg-secondary bg-opacity-25 styleSizeIcon text-center"
             id="listItem-4">D</span>
@@ -106,7 +106,7 @@
       </div>
 
 
-      <div id="containerQuizEnd" class="container bg-body-tertiary border pt-5 pb-5 d-none">
+      <div id="containerQuizEnd" class="style-Container-Quiz-End container bg-body-tertiary border d-none">
         <div
           class="container d-flex flex-column justify-content-around align-items-center bg-danger bg-opacity-25 styleImageEndContainer">
           <div class="styleImgEndDiv">
