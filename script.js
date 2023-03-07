@@ -67,12 +67,37 @@ let AUDIO_wrong = new Audio('audio/sound-wrong.mp3');
 let AUDIO_fanfare = new Audio('audio/sound-fanfare.mp3')
 
 
+async function includeHTML() {
+    let includeElements = document.querySelectorAll('[w3-include-html]');
+    for (let i = 0; i < includeElements.length; i++) {
+        const element = includeElements[i];
+        file = element.getAttribute("w3-include-html"); // "includes/header.html"
+        let resp = await fetch(file);
+        if (resp.ok) {
+            element.innerHTML = await resp.text();
+        } else {
+            element.innerHTML = 'Page not found';
+        }
+    }
+}
+
 function init() {
     document.getElementById('count-all').innerHTML = questions.length;
     enableButtons();
     showQuestion();
 }
 
+
+function showGeography() {
+    document.getElementById('welcome').classList.add('d-none');
+    document.getElementById('geography').classList.remove('d-none');
+    replay();
+}
+
+function showEnd() {
+    document.getElementById('end').classList.remove('d-none');
+    document.getElementById('geography').classList.add('d-none');
+}
 
 function enableButtons() {
     for (i = 1; i < 5; i++) {
@@ -117,6 +142,7 @@ function updateToNextQuestion() {
 
 function showEndScreen() {
     AUDIO_fanfare.play();
+    showEnd();
     document.getElementById('containerQuiz').classList.add('d-none');
     document.getElementById('containerQuizEnd').classList.remove('d-none');
     document.getElementById('countRightAnswers').innerHTML = `&ensp;` + counterRight;
@@ -233,6 +259,8 @@ function replay() {
 function hideEndScreenAndShowQuiz() {
     document.getElementById('containerQuizEnd').classList.add('d-none');
     document.getElementById('containerQuiz').classList.remove('d-none');
+    document.getElementById('end').classList.add('d-none');
+    document.getElementById('geography').classList.remove('d-none');
 }
 
 
@@ -240,4 +268,14 @@ function setGlobalValues() {
     currentQuestion = 0;
     counter = -1;
     counterRight = 0;
+}
+
+
+function showMenu() {
+    document.getElementById('navigation').classList.add('show_overlay_menu');
+}
+
+
+function closeMenu() {
+    document.getElementById('navigation').classList.remove('show_overlay_menu');
 }

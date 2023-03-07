@@ -1,21 +1,43 @@
+body {
+    overflow-x: hidden;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.quiz-card-whole {
+    display: flex;
+    margin-top: 96px;
+}
+
 button:disabled {
     opacity: 1 !important;
 }
 
 .styleFontRR {
-    font-family: 'Rubik-Regular' !important;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
 }
 
 .styleFontRM {
-    font-family: 'Rubik-Medium' !important;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 600;
 }
 
 .styleFontRB {
-    font-family: 'Rubik-Bold' !important;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 800;
 }
 
 .styleFontPT {
-    font-family: 'PT Sans' !important;
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 700 !important;
 }
 
 .styleSizeIcon {
@@ -25,10 +47,6 @@ button:disabled {
 
 .styleSizeImgEnd {
     object-fit: cover;
-}
-
-.styleContentWidthImp {
-    max-width: 40rem !important;
 }
 
 .styleTextBlackImp {
@@ -44,19 +62,25 @@ button:disabled {
 
 .styleImgEndDiv img {
     width: 200px;
-    height: 120px;
+    height: 200px;
     object-fit: contain;
 }
 
+
+.styleImgWelcomeDiv {
+    display: flex;
+}
+
 .styleImgWelcomeDiv img {
-    width: 100%;
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
 }
 
 .style-Card-Question {
     line-height: 2.5ex;
-    height: 5.0ex;
-    /* 2.5ex for each visible line */
-    overflow: hidden;
+    width: 480px;
+    /* max-width: 480px; */
 }
 
 .styleBtnWelcome {
@@ -64,29 +88,67 @@ button:disabled {
 }
 
 .style-Container-Quiz-End {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
+    width: 35rem;
+}
+
+.menu {
+    display: none;
+}
+
+.closeButton {
+    display: none;
 }
 
 @media (max-width: 780px) {
-    .style-Card-Question {
-        line-height: 2.5ex;
-        height: 12.5ex;
-        /* 2.5ex for each visible line */
-        overflow: hidden;
+
+    .styleImgWelcomeDiv img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 
-    .style-Container-Left {
-        padding: 0px !important;
+    .menu {
+        display: flex;
+        position: absolute;
+        background-color: #0d6efd;
+        border-radius: 100%;
+        width: 50px;
+        left: 8px;
+        top: 32px;
+        cursor: pointer;
     }
 
-    .styleContentWidthImp {
-        max-width: 40rem !important;
-        padding: 0px !important;
+    .overlay_menu {
+        background-color: white;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        border-left: solid 1px lightgrey;
+        transform: translateX(-201px);
+        transition: all 225ms ease-in-out;
     }
 
-    .style-Conainer-Quiz {
-        padding: 0px !important;
+    .show_overlay_menu {
+        transform: none;
+    }
+
+    .closeButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 100%;
+        position: absolute;
+        left: 8px;
+        width: 48px;
+        height: 48px;
+        top: 32px;
+        cursor: pointer;
     }
 
     .styleContentWidthImp {
@@ -96,17 +158,18 @@ button:disabled {
     .styleImageEndContainer {
         border-radius: 0% !important;
         width: 209px !important;
-        height: 100vh !important;
-        padding: 0px !important;
-    }
-
-    .style-Container-Quiz-End {
-        padding: 0px !important;
-        margin: 0px !important;
     }
 
     .styleBtnWelcomeText {
         width: min-content;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .style-Card-Question {
+        width: unset;
+        max-width: 480px;
     }
 
 }

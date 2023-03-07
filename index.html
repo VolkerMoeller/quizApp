@@ -19,40 +19,27 @@
 
 </head>
 
-<body class="d-flex min-vh-100 bg-body-secondary bg-opacity-75 styleFontRR">
-  <div id="quiz-Card-Base" class="container style-Container-Left m-auto">
-    <div id="quiz-Card-Whole" class="container justify-content-center d-flex m-auto styleContentWidthImp">
-      <ul id="quiz-Card-Nav" class="nav flex-column bg-primary py-4">
-        <a href="index.html">
-          <div class="text-center mt-0 mb-5 ">
-            <img src="src/img/quizBlue/logo 2.png" class="rounded">
-          </div>
-        </a>
-        <li class="nav-item">
-          <a class="nav-link active border-start border-5 border-white text-light fs-5" aria-current="page"
-            href="geography.html">Geographie</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled text-secondary fs-5" href="#">Tiere</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link  disabled text-secondary fs-5" href="#">Personen</a>
-        </li>
-      </ul>
-      <div id="quiz-Welcome"
-        class="container d-flex flex-column justify-content-around align-items-center m-0 p-0 styleImageEndContainer">
-        <button class="styleBtnWelcome container h-100 p-0 border-0" onclick="window.location.href='geography.html'">
-          <div class="styleImgWelcomeDiv">
-            <img src="src/img/quizBlue/bg b.png">
-          </div>
-        </button>
-        <span class="position-absolute styleFontRB fs-3 text-center styleFontPT">
-          <button class= "styleBtnWelcomeText d-flex border-0 btn bg-opacity-100 fs-3" onclick="window.location.href='geography.html'">
-          Welcome to<br>The Awesome 50+
-          QUIZ</span>
-          </button>
-      </div>
+<body class="bg-body-secondary bg-opacity-75 styleFontRR" onload="includeHTML()">
+
+  <div class="content">
+
+    <div id="progressContainer" class="progress bg-secondary bg-opacity-75 position-absolute start-0 end-0"
+      role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar bg-danger" id="progress" style="width: 0%"></div>
     </div>
-    
+
+
+    <div id="quiz-card-whole" class="quiz-card-whole">
+      <div id="menu" class="menu"><img src="src/img/menuBar.png" onclick="showMenu()"></div>
+      <div w3-include-html="src/templates/navigation.html" id="navigation" class="bg-primary overlay_menu"></div>
+
+      <div w3-include-html="src/templates/welcome.html" id="welcome"></div>
+      <div w3-include-html="src/templates/geography.html" id="geography" class="d-none"></div>
+      <div w3-include-html="src/templates/end.html" id="end" class="d-none align-items-center"></div>
+    </div>
+
+  </div>
+
 </body>
+
 </html>
