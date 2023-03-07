@@ -57,7 +57,11 @@ button:disabled {
     border-radius: 100% !important;
     width: 418px !important;
     height: 418px !important;
+}
 
+
+.styleImgEndDiv {
+    display: flex;
 }
 
 .styleImgEndDiv img {
@@ -87,9 +91,9 @@ button:disabled {
     background-color: rgba(247, 247, 247, 1.0);
 }
 
-.style-Container-Quiz-End {
-    width: 35rem;
-}
+/* .style-Container-Quiz-End { */
+    /* width: 35rem; */
+/* } */
 
 .menu {
     display: none;
@@ -157,13 +161,25 @@ button:disabled {
 
     .styleImageEndContainer {
         border-radius: 0% !important;
-        width: 209px !important;
+        width: unset !important;
+        /* width: 209px !important; */
     }
+
+    /* .styleImageEndContainer {
+        border-radius: 100% !important;
+        width: 418px !important;
+        height: 418px !important;
+    } */
+    
 
     .styleBtnWelcomeText {
         width: min-content;
     }
 
+    .styleImgEndDiv img {
+        width: 100%;
+    
+    }
 }
 
 @media (max-width: 480px) {
@@ -171,5 +187,10 @@ button:disabled {
         width: unset;
         max-width: 480px;
     }
+
+    .styleImageEndContainer {
+        width: unset;
+    }
+
 
 }
