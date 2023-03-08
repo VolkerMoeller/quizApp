@@ -1,4 +1,4 @@
-let questions = [
+let questionsGeography = [
 
     {
         "question": "Welches Land sieht auf der Landkarte aus wie ein Stiefel?",
@@ -50,12 +50,53 @@ let questions = [
         "right-answer": 1
     },
     {
-        "question": "Wie heisst Indiens wichtigster und längster Fluss??",
+        "question": "Wie heisst Indiens wichtigster und längster Fluss?",
         "answer-1": "Seine",
         "answer-2": "Spree",
         "answer-3": "Ganges",
         "answer-4": "Amazonas",
         "right-answer": 3
+    }
+];
+
+let questionsPersons = [
+
+    {
+        "question": "Welcher &quot;Hermann&quot; ist kein Musiker?",
+        "answer-1": "Rarebell",
+        "answer-2": "Hesse",
+        "answer-3": "Brood",
+        "answer-4": "Van Veen",
+        "right-answer": 2
+    },
+    {
+        "question": "Welcher berühmte Apotheker und Esoteriker verfasste &quot;Les Prophethies&quot; (Die Prophezeiungen)?",
+        "answer-1": "Nostradamus",
+        "answer-2": "Klingsor",
+        "answer-3": "John Dee",
+        "answer-4": "Giovanni Battista Seni",
+        "right-answer": 1
+    }
+];
+
+
+let questionsAnimals = [
+
+    {
+        "question": "Welches Tier hat den lautesten Schrei der Welt?",
+        "answer-1": "Brüllaffe",
+        "answer-2": "Esel",
+        "answer-3": "Wolf",
+        "answer-4": "Löwe",
+        "right-answer": 1
+    },
+    {
+        "question": "Wo sind Steppenzebras zu Hause?",
+        "answer-1": "in der Prärie",
+        "answer-2": "im Urwald",
+        "answer-3": "in den Bergen",
+        "answer-4": "in der Savanne",
+        "right-answer": 4
     }
 ];
 
@@ -81,6 +122,59 @@ async function includeHTML() {
     }
 }
 
+
+function setCurrentButtonOnActiveById (id_Current_Button) {
+    for (let i = 1; i < 4; i++) {
+        let id_btn = 'nav-btn-' + i;
+        document.getElementById(id_btn).classList.remove('active');   
+    }
+    document.getElementById(id_Current_Button).classList.add('active');
+}
+
+function chooseGeography() {
+    questions = questionsGeography;
+}
+
+function choosePersons() {
+    questions = questionsPersons;
+}
+
+
+function chooseAnimals() {
+    questions = questionsAnimals;
+}
+
+function showGeography() {
+    let id_Current_Button = 'nav-btn-1';
+    setCurrentButtonOnActiveById(id_Current_Button);
+    chooseGeography();
+    resetAnswerButtons();
+    document.getElementById('welcome').classList.add('d-none');
+    document.getElementById('questions').classList.remove('d-none');
+    replay();
+}
+
+function showPersons() {
+    let id_Current_Button = 'nav-btn-2';
+    setCurrentButtonOnActiveById(id_Current_Button);
+    choosePersons();
+    resetAnswerButtons();
+    document.getElementById('welcome').classList.add('d-none');
+    document.getElementById('questions').classList.remove('d-none');
+    replay();
+}
+
+function showAnimals() {
+    let id_Current_Button = 'nav-btn-3';
+    setCurrentButtonOnActiveById(id_Current_Button);
+    chooseAnimals();
+    resetAnswerButtons();
+    document.getElementById('welcome').classList.add('d-none');
+    document.getElementById('questions').classList.remove('d-none');
+    replay();
+}
+
+
 function init() {
     document.getElementById('count-all').innerHTML = questions.length;
     enableButtons();
@@ -88,15 +182,10 @@ function init() {
 }
 
 
-function showGeography() {
-    document.getElementById('welcome').classList.add('d-none');
-    document.getElementById('geography').classList.remove('d-none');
-    replay();
-}
 
 function showEnd() {
     document.getElementById('end').classList.remove('d-none');
-    document.getElementById('geography').classList.add('d-none');
+    document.getElementById('questions').classList.add('d-none');
 }
 
 function enableButtons() {
@@ -260,7 +349,7 @@ function hideEndScreenAndShowQuiz() {
     document.getElementById('containerQuizEnd').classList.add('d-none');
     document.getElementById('containerQuiz').classList.remove('d-none');
     document.getElementById('end').classList.add('d-none');
-    document.getElementById('geography').classList.remove('d-none');
+    document.getElementById('questions').classList.remove('d-none');
 }
 
 
