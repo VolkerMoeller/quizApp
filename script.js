@@ -100,6 +100,7 @@ let questionsAnimals = [
     }
 ];
 
+let questions = [];
 let currentQuestion = 0;
 let counter = -1;
 let counterRight = 0;
@@ -152,16 +153,13 @@ function showGeography() {
     chooseGeography();
     setCurrentButtonOnActiveById('nav-btn-1');
     initQuestions();
-    closeMenu();
 }
 
 
 function showPersons() {
     choosePersons();
     setCurrentButtonOnActiveById('nav-btn-2');
-    resetAnswerButtons();
     initQuestions();
-    closeMenu();
 }
 
 
@@ -169,28 +167,36 @@ function showAnimals() {
     chooseAnimals();
     setCurrentButtonOnActiveById('nav-btn-3');
     initQuestions();
-    closeMenu();
+}
+
+function hideAndShowDivById(hideDivId, showDivId) {
+    document.getElementById(hideDivId).classList.add('d-none');
+    document.getElementById(showDivId).classList.remove('d-none');
 }
 
 
 function initQuestions() {
+    closeMenu();
     resetAnswerButtons();
-    document.getElementById('welcome').classList.add('d-none');
-    document.getElementById('questions').classList.remove('d-none');
+    hideAndShowDivById('welcome', 'questions');
     replay();
 }
 
 
 function init() {
-    document.getElementById('count-all').innerHTML = questions.length;
+    showAmountOfQuestions();
     enableButtons();
     showQuestion();
 }
 
 
+function showAmountOfQuestions() {
+    document.getElementById('count-all').innerHTML = questions.length;
+}
+
+
 function showEnd() {
-    document.getElementById('end').classList.remove('d-none');
-    document.getElementById('questions').classList.add('d-none');
+    hideAndShowDivById('questions', 'end')
 }
 
 
@@ -213,7 +219,6 @@ function showQuestion() {
     updateProgress(counter, 'progress');
     updateProgress(counterWrongAnswer, 'progressWrongAnswer');
     updateProgress(counterRight, 'progressRightAnswer');
-
     if (gameOver()) {
         showEndScreen();
     } else {
@@ -231,18 +236,22 @@ function updateToNextQuestion() {
     let question = questions[currentQuestion];
     document.getElementById('question-number').innerHTML = currentQuestion + 1;
     document.getElementById('card-question').innerHTML = question['question'];
-    document.getElementById('answer-1').innerHTML = question['answer-1'];
-    document.getElementById('answer-2').innerHTML = question['answer-2'];
-    document.getElementById('answer-3').innerHTML = question['answer-3'];
-    document.getElementById('answer-4').innerHTML = question['answer-4'];
+    updateAnswers(question);
+}
+
+
+function updateAnswers(question) {
+    for (let i = 1; i < 5; i++) {
+        answerId = 'answer-' + i;
+        document.getElementById(answerId).innerHTML = question[answerId];
+    }
 }
 
 
 function showEndScreen() {
     AUDIO_fanfare.play();
     showEnd();
-    document.getElementById('containerQuiz').classList.add('d-none');
-    document.getElementById('containerQuizEnd').classList.remove('d-none');
+    hideAndShowDivById('containerQuiz', 'containerQuizEnd');
     document.getElementById('countRightAnswers').innerHTML = `&ensp;` + counterRight;
     document.getElementById('countTotalAnswers').innerHTML = questions.length;
 }
@@ -265,6 +274,11 @@ function answer(selection) {
 
 function enableNextButton() {
     document.getElementById('next-Button').disabled = false;
+}
+
+
+function disableNextButton() {
+    document.getElementById('next-Button').disabled = true;
 }
 
 
@@ -310,9 +324,9 @@ function styleWrongAnswer(selection, idOfCurrentListItem, idOfRightAnswer, idOfL
 
 
 function nextQuestion() {
-    stopSound();
     currentQuestion++;
-    document.getElementById('next-Button').disabled = true;
+    stopSound();
+    disableNextButton();
     resetAnswerButtons();
     showQuestion();
     enableButtons();
@@ -356,10 +370,8 @@ function replay() {
 
 
 function hideEndScreenAndShowQuiz() {
-    document.getElementById('containerQuizEnd').classList.add('d-none');
-    document.getElementById('containerQuiz').classList.remove('d-none');
-    document.getElementById('end').classList.add('d-none');
-    document.getElementById('questions').classList.remove('d-none');
+    hideAndShowDivById('containerQuizEnd', 'containerQuiz');
+    hideAndShowDivById('end', 'questions');
 }
 
 
