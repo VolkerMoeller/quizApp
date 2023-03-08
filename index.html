@@ -22,22 +22,17 @@
 
 <body class="bg-body-secondary bg-opacity-75 styleFontRR" onload="includeHTML()">
 
-  <div class="content">
+  <div w3-include-html="src/templates/progress.html" class="progressContainer"></div>
 
-    <div id="progressContainer" class="progress bg-secondary bg-opacity-75 position-absolute start-0 end-0"
-      role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-      <div class="progress-bar bg-danger" id="progress" style="width: 0%"></div>
-    </div>
-
-
-    <div id="quiz-card-whole" class="quiz-card-whole">
+  <div id="quiz-card-whole" class="style-quiz-card-whole">
+    <div class="style-quiz-card">
       <div id="menu" class="menu"><img src="src/img/menuBar.png" onclick="showMenu()"></div>
       <div w3-include-html="src/templates/navigation.html" id="navigation" class="bg-primary overlay_menu"></div>
-
       <div w3-include-html="src/templates/welcome.html" id="welcome"></div>
       <div w3-include-html="src/templates/questions.html" id="questions" class="d-none"></div>
       <div w3-include-html="src/templates/end.html" id="end" class="d-none align-items-center"></div>
     </div>
+  </div>
 
   </div>
 

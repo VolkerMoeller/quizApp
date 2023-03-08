@@ -103,6 +103,7 @@ let questionsAnimals = [
 let currentQuestion = 0;
 let counter = -1;
 let counterRight = 0;
+let counterWrongAnswer = 0;
 let AUDIO_success = new Audio('audio/sound-success.mp3');
 let AUDIO_wrong = new Audio('audio/sound-wrong.mp3');
 let AUDIO_fanfare = new Audio('audio/sound-fanfare.mp3')
@@ -123,17 +124,19 @@ async function includeHTML() {
 }
 
 
-function setCurrentButtonOnActiveById (id_Current_Button) {
+function setCurrentButtonOnActiveById(id_Current_Button) {
     for (let i = 1; i < 4; i++) {
         let id_btn = 'nav-btn-' + i;
-        document.getElementById(id_btn).classList.remove('active');   
+        document.getElementById(id_btn).classList.remove('active');
     }
     document.getElementById(id_Current_Button).classList.add('active');
 }
 
+
 function chooseGeography() {
     questions = questionsGeography;
 }
+
 
 function choosePersons() {
     questions = questionsPersons;
@@ -144,30 +147,33 @@ function chooseAnimals() {
     questions = questionsAnimals;
 }
 
+
 function showGeography() {
-    let id_Current_Button = 'nav-btn-1';
-    setCurrentButtonOnActiveById(id_Current_Button);
     chooseGeography();
-    resetAnswerButtons();
-    document.getElementById('welcome').classList.add('d-none');
-    document.getElementById('questions').classList.remove('d-none');
-    replay();
+    setCurrentButtonOnActiveById('nav-btn-1');
+    initQuestions();
+    closeMenu();
 }
+
 
 function showPersons() {
-    let id_Current_Button = 'nav-btn-2';
-    setCurrentButtonOnActiveById(id_Current_Button);
     choosePersons();
+    setCurrentButtonOnActiveById('nav-btn-2');
     resetAnswerButtons();
-    document.getElementById('welcome').classList.add('d-none');
-    document.getElementById('questions').classList.remove('d-none');
-    replay();
+    initQuestions();
+    closeMenu();
 }
 
+
 function showAnimals() {
-    let id_Current_Button = 'nav-btn-3';
-    setCurrentButtonOnActiveById(id_Current_Button);
     chooseAnimals();
+    setCurrentButtonOnActiveById('nav-btn-3');
+    initQuestions();
+    closeMenu();
+}
+
+
+function initQuestions() {
     resetAnswerButtons();
     document.getElementById('welcome').classList.add('d-none');
     document.getElementById('questions').classList.remove('d-none');
@@ -182,11 +188,11 @@ function init() {
 }
 
 
-
 function showEnd() {
     document.getElementById('end').classList.remove('d-none');
     document.getElementById('questions').classList.add('d-none');
 }
+
 
 function enableButtons() {
     for (i = 1; i < 5; i++) {
@@ -204,7 +210,10 @@ function disableButtons() {
 
 function showQuestion() {
     counter++;
-    updateProgress(counter);
+    updateProgress(counter, 'progress');
+    updateProgress(counterWrongAnswer, 'progressWrongAnswer');
+    updateProgress(counterRight, 'progressRightAnswer');
+
     if (gameOver()) {
         showEndScreen();
     } else {
@@ -248,7 +257,7 @@ function answer(selection) {
     if (answerWasCorrect(selectedQuestionNumber, question)) {
         animateButtonAndUpdateCounter(selection, idOfListItemRightAnswer);
     } else {
-        animateRightAndWrongButton(selection, idOfCurrentListItem, idOfRightAnswer, idOfListItemRightAnswer);
+        animateRightAndWrongButtonAndUpdateCounter(selection, idOfCurrentListItem, idOfRightAnswer, idOfListItemRightAnswer);
     }
     enableNextButton();
 }
@@ -267,10 +276,11 @@ function animateButtonAndUpdateCounter(selection, idOfListItemRightAnswer) {
 }
 
 
-function animateRightAndWrongButton(selection, idOfCurrentListItem, idOfRightAnswer, idOfListItemRightAnswer) {
+function animateRightAndWrongButtonAndUpdateCounter(selection, idOfCurrentListItem, idOfRightAnswer, idOfListItemRightAnswer) {
     AUDIO_wrong.play();
     styleWrongAnswer(selection, idOfCurrentListItem, idOfRightAnswer, idOfListItemRightAnswer);
     disableButtons();
+    counterWrongAnswer++;
 }
 
 
@@ -329,10 +339,10 @@ function resetAnswerButtons() {
 }
 
 
-function updateProgress(counter) {
+function updateProgress(counter, idProgress) {
     let valueProgress = 100 / questions.length * counter;
     let newProgress = `width: ${valueProgress}%`;
-    document.getElementById('progress').style = newProgress;
+    document.getElementById(idProgress).style = newProgress;
 }
 
 
@@ -357,6 +367,7 @@ function setGlobalValues() {
     currentQuestion = 0;
     counter = -1;
     counterRight = 0;
+    counterWrongAnswer = 0;
 }
 
 

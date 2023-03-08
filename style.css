@@ -7,6 +7,36 @@ body {
     justify-content: center;
 }
 
+.progressContainer {
+    position: absolute;
+    top: 8px;
+    width: 100%;
+    height: 48px;
+}
+
+.AnswerContainer {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 16px;
+}
+
+
+.wrongAnswerContainer {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 32px;
+}
+
+.rightAnswerContainer {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+}
+
+
 .quiz-card-whole {
     display: flex;
     margin-top: 96px;
@@ -55,10 +85,9 @@ button:disabled {
 
 .styleImageEndContainer {
     border-radius: 100% !important;
-    width: 418px !important;
-    height: 418px !important;
+    width: 480px !important;
+    height: 480px !important;
 }
-
 
 .styleImgEndDiv {
     display: flex;
@@ -76,24 +105,33 @@ button:disabled {
 }
 
 .styleImgWelcomeDiv img {
-    width: 500px;
-    height: 500px;
+    width: 504px;
+    height: 504px;
     object-fit: cover;
 }
 
 .style-Card-Question {
     line-height: 2.5ex;
+    min-height: 7.5ex;
     width: 480px;
-    /* max-width: 480px; */
 }
 
 .styleBtnWelcome {
     background-color: rgba(247, 247, 247, 1.0);
 }
 
-/* .style-Container-Quiz-End { */
-    /* width: 35rem; */
-/* } */
+.style-quiz-card-whole {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding-top: 56px;
+}
+
+.style-quiz-card {
+    display: flex;
+}
 
 .menu {
     display: none;
@@ -118,7 +156,7 @@ button:disabled {
         border-radius: 100%;
         width: 50px;
         left: 8px;
-        top: 32px;
+        top: 8px;
         cursor: pointer;
     }
 
@@ -127,13 +165,13 @@ button:disabled {
         position: absolute;
         display: flex;
         flex-direction: column;
-        width: 200px;
+        width: 50%;
         height: 100vh;
         top: 0;
         left: 0;
         z-index: 2;
         border-left: solid 1px lightgrey;
-        transform: translateX(-201px);
+        transform: translateX(-100%);
         transition: all 225ms ease-in-out;
     }
 
@@ -151,7 +189,7 @@ button:disabled {
         left: 8px;
         width: 48px;
         height: 48px;
-        top: 32px;
+        top: 8px;
         cursor: pointer;
     }
 
@@ -162,15 +200,7 @@ button:disabled {
     .styleImageEndContainer {
         border-radius: 0% !important;
         width: unset !important;
-        /* width: 209px !important; */
     }
-
-    /* .styleImageEndContainer {
-        border-radius: 100% !important;
-        width: 418px !important;
-        height: 418px !important;
-    } */
-    
 
     .styleBtnWelcomeText {
         width: min-content;
@@ -178,7 +208,7 @@ button:disabled {
 
     .styleImgEndDiv img {
         width: 100%;
-    
+
     }
 }
 
@@ -192,5 +222,7 @@ button:disabled {
         width: unset;
     }
 
-
+    .overlay_menu {
+        width: 100%;
+    }
 }
