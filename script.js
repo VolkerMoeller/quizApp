@@ -1,5 +1,4 @@
 let questionsGeography = [
-
     {
         "question": "Welches Land sieht auf der Landkarte aus wie ein Stiefel?",
         "answer-1": "Italien",
@@ -60,7 +59,6 @@ let questionsGeography = [
 ];
 
 let questionsPersons = [
-
     {
         "question": "Welcher &quot;Hermann&quot; ist kein Musiker?",
         "answer-1": "Rarebell",
@@ -81,7 +79,6 @@ let questionsPersons = [
 
 
 let questionsAnimals = [
-
     {
         "question": "Welches Tier hat den lautesten Schrei der Welt?",
         "answer-1": "Brüllaffe",
@@ -338,6 +335,8 @@ function stopSound() {
     AUDIO_success.currentTime = 0;
     AUDIO_wrong.pause();
     AUDIO_wrong.currentTime = 0;
+    AUDIO_fanfare.pause();
+    AUDIO_fanfare.currentTime = 0;
 }
 
 
